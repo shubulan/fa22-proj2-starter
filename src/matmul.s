@@ -25,7 +25,6 @@
 # =======================================================
 matmul:
     # Error checks
-    ebreak
     addi t0 x0 1
     blt a1 t0 return_38
     blt a2 t0 return_38
@@ -61,7 +60,6 @@ matmul:
 
     add s9 x0 x0
     add s8 a6 x0
-    ebreak
 outer_loop_start:
     beq s9 s1 outer_loop_end
 
@@ -75,9 +73,7 @@ inner_loop_start:
     add a2 s2 x0
     addi a3 x0 1
     add a4 s5 x0
-    ebreak
     jal ra dot
-    ebreak
     sw a0 0(s8) # store res
 
     addi s8 s8 4
